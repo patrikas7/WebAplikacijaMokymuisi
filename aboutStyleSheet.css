@@ -1,0 +1,144 @@
+body{
+	background-color: #222;
+}
+
+#navbar{
+    background-color: #222;
+    width: 100%;
+    height: 11vh;
+    position: fixed;
+    z-index: 10;
+}
+
+#main{ /* fonas */
+    height: 100vh;
+    width: 100%;
+    background-image: url("back1.png");
+    background-size: cover;
+    background-position: center;
+}
+ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li a{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+/* Logotipo stilius */
+.logo{
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+
+/* Mygtukų stilius*/
+.brk-btn{
+    float: right;
+    position: relative;
+    background: none;
+    color: aqua;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.2em solid aqua;
+    padding: 0.5em 1em;
+}
+
+/* Tarpo padarymas mygtuko sienose */
+.brk-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+/* Mygtuko animacija užvedus pelyte ant jo*/
+  .brk-btn:hover{
+    text-decoration: none;
+    color: aqua;
+  }
+
+.brk-btn:hover::before{
+    right: 80%;
+}
+.brk-btn:hover::after{
+    left: 80%;
+}
+
+
+.sign{
+	color: aqua;
+    font-size: 50px;
+    text-align: center;
+	padding-top: 50px;
+	
+}
+
+.container{
+    height: 60vh;
+    background-color: rgba(34, 34 , 34, 0.95);
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-text{
+	color: aqua;
+	text-align: left;
+	padding-top: 50px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.signature{
+	text-align: right;
+	font-weight: bold;
+	padding-right: 50px;
+	background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    animation: rainbow 4s ease infinite;
+}
+
+@keyframes rainbow {
+    0% 
+    {
+        background-position: 0% 50%
+    }
+    50% 
+    {
+        background-position: 100% 25%
+    }
+    100% 
+    {
+        background-position: 0% 50%
+    }
+}
+
+

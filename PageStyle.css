@@ -1,0 +1,177 @@
+#header{
+    background-color: #222;
+    width: 100%;
+    height: 11vh;
+    position: fixed;
+    margin-top: -10px;
+    z-index: 10;
+}
+
+body{
+	background-color: #222;
+}
+
+ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li a{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.brk-btn{
+    float: right;
+    position: relative;
+    background: none;
+    color: aqua;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.2em solid aqua;
+    padding: 0.5em 1em;
+}
+
+/* Tarpo padarymas mygtuko sienose */
+.brk-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+/* Mygtuko animacija užvedus pelyte ant jo*/
+  .brk-btn:hover{
+    text-decoration: none;
+    color: aqua;
+  }
+
+.brk-btn:hover::before{
+    right: 80%;
+}
+.brk-btn:hover::after{
+    left: 80%;
+}
+
+#mainSection{
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.mainSectionContainer{
+    position: absolute;
+    color: aqua;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -10%);
+    font-size: 50px;
+    width: 900px;
+    height: 100%;
+    text-align: center;
+
+}
+
+.mainSectionHeader{
+    margin-top: 200px;
+}
+
+.mainSectionHeader h3{
+    font-size: 60px;
+}
+
+.button1{
+    margin-top: 30px;
+    padding: 0.7em 1.6em;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 30px;
+    background-color: aqua;
+    color: #222;
+    border:0;
+}
+
+.progress{
+    margin-top: 50px;
+}
+.w3-container{
+    height: 30px;
+}
+
+.precenteges{
+    font-size: 15px;
+    transform: translate(0%, -50%);
+}
+
+#sideNavbar{
+    z-index: 11;
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: aqua;
+}
+
+#sideHeader{
+    color: aqua;
+    text-align: center;
+}
+
+
+#sideNavbar ul{
+    margin-top: 30px;
+    height: 100%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#sideNavbar li{
+    color: aqua;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 70px;
+
+    font-size: 20px;
+}
+
+#sideNavbar li p{
+    transform: translate(0%, -20%);
+    margin-left: 15px;
+}
+
+
+.progressTitle{
+    color: aqua;
+    font-size: 20px;
+}
