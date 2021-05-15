@@ -23,33 +23,32 @@
 </section>
 
 <section id="main">
-	<div class="container" style="height: 72vh;">
+	<div class="container" style="height: 75vh; margin-top: 10px;">
 		<div class="sign">
-			<p>Kintamieji</p>
+			<p>Išrinkimo sakinys "switch"</p>
 		</div>
 		<div class="container-text">
-            <p>Kintamieji - reikšmės, kurios saugomos kompiuterio atmintinėje,taip pat turinčios kažkokį vardą. </p>
-            <ol>
-                <li>Kintamųjų reikšmes galime keisti, bet vardų - ne.</li>
-                <li>intamieji apibrėžiami naudojant priskyrimo sakinius.</li>
-                <li>Reikšmės išvedimui reikia naudoti išvedimo sakinį cout su &lt;&lt; operatoriais. Pvz: cout &lt;&lt; skaicius;</li>
-            </ol>
-            <p>Kintamųjų vardų sudarymo taisyklės:</p>
-            <ol>
-                <li>Pirmas vardo simbolis turėtų būti raidė.</li>
-                <li>Vardas negali turėti tarpų.</li>
-                <li>Vardas negali sutapti su tipo pavadinimu ar kitais baziniais žodžiais.</li>
-                <li>Yra skirtumas tarp mažųjų ir didžiųjų raidžių.</li>
-            </ol>
-            <p>Kintamųjų tipai: </p>
-            <ol>
-                <li>int - sveikieji skaičiai.</li>
-                <li>double - realieji skaičiai.</li>
-                <li>float - realieji skaičiai.</li>
-                <li>bool - loginiai kintamieji.</li>
-            </ol>
+            <p>Išrinkimo sakinys gautą išraišką (kintamasis skliaustuose) tikrina su konstanta, kuri aprašoma case komanda, 
+                ir jei išraiška yra lygi konstantai, vykdomi jos sakiniai (sakinys), jei ne - vykdomi default žymės sakiniai. 
+                Pastarosios gali ir nebūti. Kiekvienoje konstantoje patartina naudoti komandą break, taip išvengiama painiavos vykdyme. 
+                Išraiška gali būti tik sveiko ar simbolinio tipo. Tai reiškia, kad switch galima naudoti tik su int, char arba string tipais.</p>
+            <p>Switch išrinkimo sakinio pavyzdys:</p>
+            <p>int a;<br>
+                cin >> a;<br>
+                switch(a){<br>
+                    &emsp;&emsp;case 1: // jūsų kodas<br>
+                    &emsp;&emsp;break;<br>
+                    &emsp;&emsp;case 2: // jūsų kodas<br>
+                    &emsp;&emsp;break;<br>
+                    &emsp;&emsp;case 3: // jūsų kodas<br>
+                    &emsp;&emsp;break;<br>
+                }</p>
+            
+            <p>Šiuo atveju priklausomai nuo į konsolę įvesto skaičiaus, atliekami atm tikri veiksmai.</p>
+
 		</div>
-        <button class="brk-btn" style="margin-right: 20px; font-size: 20px;" onclick="redirectoTest()">Testas&gt;&gt;</button>
+        <button class="brk-btn" style="float: left; font-size: 20px; margin-left: 20px;" onclick="redirectBack()">&lt;&lt;Atgal</button>
+        <button class="brk-btn" style="margin-right: 20px; font-size: 20px;" onclick="redirectoTest()">Testas &gt;&gt;</button>
     </div>
 
 </section>
@@ -72,8 +71,12 @@
         xmlhttp.send(null);
     }
 
+    function redirectBack(){
+		window.location.href = "http://localhost/webapp/apie_if.html";
+	}
+
     function redirectoTest(){
-        window.location.href = "http://localhost/webapp/TestasVienas.html";
+        window.location.href = "http://localhost/webapp/TestasSesi.html";
     }
 </script>
 </html>

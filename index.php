@@ -17,7 +17,7 @@
 <!--Headerio sekcija su logotipu ir listu, kuriame yra du mygtukai("temos" ir "apie puslapį")-->
 <section id="header">
     <ul id="navbar">
-        <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="logo" class="logo"></li>
+        <li><img src="tlogo.png" alt="logo" class="logo"></li>
 		<li><a href="about.html" class="brk-btn">Apie projektą</a></li>
 		<li><a href="#outro" class="brk-btn">Apie puslapį</a></li>
         <li><a href="#" class="brk-btn">Pradžia</a></li>
@@ -175,9 +175,5 @@
         </ol>
         </div>
     </section>
-
-<div class="signature">
-        <p>© Brigada</p>
-</div>
 </body>
 </html>

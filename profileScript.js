@@ -3,29 +3,26 @@ function loadUserData(){
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200){
             var userObject = JSON.parse(this.responseText);
-            document.getElementById("name").setAttribute('value',userObject.name);
-            document.getElementById("surname").setAttribute('value',userObject.surname);
-            document.getElementById("email").setAttribute('value',userObject.email);
-            document.getElementById("school").setAttribute('value',userObject.school);
-            document.getElementById("age").setAttribute('value',userObject.age);
+            document.getElementById("nameAndSurname").innerHTML = userObject.name + " " + userObject.surname;
+            document.getElementById("firstname").placeholder = userObject.name;
+            document.getElementById("lastname").placeholder = userObject.surname;
+            document.getElementById("inputEmail4").placeholder = userObject.email;
+            document.getElementById("school").placeholder = userObject.school;
+            document.getElementById("age").placeholder = userObject.age;
         }
     };
     xmlhttp.open("GET", "profile.php", true);
-    xmlhttp.send();
+    xmlhttp.send(); 
 }
 
-function checkEmail(){
-    var email = document.getElementById('email').value;
-    $.ajax({
-        type: "POST",
-        url: "checkEmailForUpdate.php?action=",
-        data: {"email" : email},
-        success: function (data) {
-            if(data == "exist"){
-                email.setCustomValidity('Elektroninis paštas jau egzistuoja');
-            } else{
-                email.setCustomValidity('');
-            }
-          }
-    });
-}
+function destroySession(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET','./destroySession.php', true);
+    xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+         window.location.href = "http://localhost/webapp/";
+    }};
+    xmlhttp.send(null);
+  }
+
+  

@@ -1,5 +1,3 @@
-
-
 .signUp-container{
     position: absolute;
     margin-top: 200px;
@@ -24,7 +22,6 @@
     background-color: aqua;
     margin-top: 0px;
     width: 90%;
-    background-color: aqua;
     height: 2px;
     border: 0;
 }
@@ -54,5 +51,8 @@
     margin-top: 15px;
 }
 
-
+#updateMessage{
+    font-size: 25px;
+    display: none;
+}
 

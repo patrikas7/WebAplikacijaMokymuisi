@@ -6,6 +6,8 @@
         public $email;
         public $school;
         public $age;
+        public $progress;
+        public $password;
 
         function set_name($name){
             $this->name = $name;
@@ -25,6 +27,14 @@
 
         function set_age($age){
             $this->age = $age;
+        }
+
+        function set_progress($progress){
+            $this->progress = $progress;
+        }
+
+        function set_password($password){
+            $this->password = $password;
         }
     }
 
@@ -50,6 +60,9 @@
             $user->set_email($row["Paštas"]);
             $user->set_school($row["Mokykla"]);
             $user->set_age($row["Amžius"]);
+            $user->set_progress($row["Progresas"]);
+            $user->set_password($row["Slaptažodis"]);
+
         }
         $myJSON = json_encode($user);
         echo $myJSON;

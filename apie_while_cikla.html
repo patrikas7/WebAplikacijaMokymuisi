@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="aboutStyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ajax-script.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>C++ is Fun</title>
+</head>
+<body>
+
+<section id="header">
+    <ul id="navbar">
+        <li><img src="tlogo.png" alt="logo" class="logo"></li>
+		<li><a href="#" onclick="destroySession()" class="brk-btn">Atsijungti</a></li>
+        <li><a href="http://localhost/webapp/TestProfile.html" class="brk-btn">Profilis</a></li>
+        <li><a href="http://localhost/webapp/mainPage.html" class="brk-btn">Pagrindinis</a></li>
+    </ul>
+</section>
+
+<section id="main">
+	<div class="container" style="height: 87vh; margin-top: 50px;">
+		<div class="sign">
+			<p>Ciklas "while"</p>
+		</div>
+		<div class="container-text">
+            <p>Ciklas while yra naudojamas, kai norime vykdyti tam tikrą kodą tol, kol tenkinama sąlyga.</p>
+            <p> While ciklo sintaksė: </p>
+
+            <p>int i = 0;<br>
+                while(i < 10) {<br>
+                &emsp;&emsp;kodas kurį norime kartoti<br>
+                &emsp;&emsp;i++;<br>
+                }</p>
+            <p>Šiuo atveju yra labai svarbu nepamiršti padidinti kintamojo i, esančio while ciklo kamiene. Jei to nepadarysime, bus užsuktas
+            begalinis ciklas. Dar vienas pavyzdys while ciklui:</p>
+            <p>Tarkime, jog norime sužinoti, kiek kartų skaičius 1024 dalinasi iš dviejų.
+                Tam nustatyti galėtume pabandyti 1024 dalinti iš dviejų iki tol, kol daugiau padalinti be liekanos nebeišeis.
+                Kodas atrodytų taip:</p>
+            <p>int x = 1024;<br>
+                int kiek = 0;<br>
+                while (x % 2 == 0) { &emsp;/* kartosime tol, kol x dalinsis iš dviejų be liekanos*/<br>
+                &emsp;&emsp;x /= 2; &emsp;// padaliname x iš dviejų<br>
+                &emsp;&emsp;kiek++; &emsp;// padidiname atsakymą vienetu<br>
+                }<br>
+                cout << kiek << endl; // atspausdiname atsakymą</p>
+            <p>Šis kodas išvestų skaičių 10.</p>
+
+		</div>
+        <button class="brk-btn" style="float: left; font-size: 20px; margin-left: 20px;" onclick="redirectBack()">&lt;&lt;Atgal</button>
+        <button class="brk-btn" style="margin-right: 20px; font-size: 20px;" onclick="redirectoTest()">Testas &gt;&gt;</button>
+    </div>
+
+</section>
+
+<section id="main2">
+	<div class="signature">
+            <p>© Brigada</p>
+    </div>
+</section>
+	
+</body>
+<script>
+    function destroySession(){ 
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET','./destroySession.php', true);
+        xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+            window.location.href = "http://localhost/webapp/";
+        }};
+        xmlhttp.send(null);
+    }
+
+    function redirectBack(){
+		window.location.href = "http://localhost/webapp/apie_for_cikla.html";
+	}
+
+    function redirectoTest(){
+        window.location.href = "http://localhost/webapp/TestasKeturi.html";
+    }
+
+</script>
+</html>

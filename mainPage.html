@@ -6,76 +6,95 @@
     <link rel="stylesheet" href="PageStyle.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="aboutStyleSheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="ajax-script.js"></script>
     <script src="jquery-3.5.1.min.js"></script>
+    <script src="homePageScript.js"></script>
     <title>C++ is Fun</title>
 </head>
-<body>
-
-<nav id="sideNavbar">
-    <h2 id="sideHeader">Temos</h2>
-    <ul class="nav-list">
-        <li class="nav-link"><p>Kintamieji</p></li>
-        <li class="nav-link"><p>Masyvai <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Testas <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Programos rašymas <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Ciklai <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Darbas su failais <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Testas <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Programos rašymas <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Metodai <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Funkcijos <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Testas <i class="fa fa-lock"></i></p></li>
-        <li class="nav-link"><p>Programos rašymas <i class="fa fa-lock"></i></p></li>
-    </ul>
-</nav>
-
-<!--Headerio sekcija su logotipu ir listu, kuriame yra du mygtukai("temos" ir "apie puslapį")-->
+<body onload="loadProgress()">
+    
 <section id="header">
     <ul id="navbar">
+        <li><img src="tlogo.png" alt="logo" class="logo"></li>
         <li><a onclick="destroySession()" class="brk-btn">Atsijungti</a></li>
-        <li><a href="http://localhost/webapp/profile.html" class="brk-btn" id="profile">Profilis</a></li>
-		<li><a href="#" class="brk-btn">Temos</a></li>
-        
-		
+        <li><a href="http://localhost/webapp/TestProfile.html" class="brk-btn" id="profile">Profilis</a></li>
     </ul>
 </section>
 
-<section id="mainSection">
-    <div class="mainSectionContainer">
-        <div class="mainSectionHeader">
-            <h3>Sveikas prisijungęs!</h3>
+<div class="mainContainer">
+    <div class="child">
+        <nav id="sideNavbar">
+            <h2 id="sideHeader">Temos</h2>
+            <ul class="nav-list">
+                <li class="nav-link"><p><a href="http://localhost/webapp/apie_kintamuosius.html" style="text-decoration: none;">Kintamieji</p></a></li>
+                <li class="nav-link"><p><a href="http://localhost/webapp/TestasVienas.html" style="text-decoration: none;">Testas</p></a></li>
+                <li class="nav-link"><p id="string" onclick="redirectToPage('apie_string', 15)" >Simbolių eilutės <i class="fa fa-lock" ></i></p></li>
+                <li class="nav-link"><p id="testas2" onclick="redirectToPage('TestasDu', 15)" >Testas <i class="fa fa-lock" ></i></p></a></li>
+                <li class="nav-link"><p id="forCiklas" onclick="redirectToPage('apie_for_cikla', 30)">For ciklas <i class="fa fa-lock"></i></p></li>
+                <li class="nav-link"><p id="testas3" onclick="redirectToPage('TestasTrys', 30)">Testas <i class="fa fa-lock" ></i></p></a></li>
+                <li class="nav-link"><p id="whileCiklas" onclick="redirectToPage('apie_while_cikla', 45)">While ciklas <i class="fa fa-lock"></i></p></li>
+                <li class="nav-link"><p id="testas4" onclick="redirectToPage('TestasKeturi', 45)">Testas <i class="fa fa-lock" ></i></p></a></li>
+                <li class="nav-link"><p id="ifSakinys" onclick="redirectToPage('apie_if', 60)">If sakinys <i class="fa fa-lock"></i></p></li>
+                <li class="nav-link"><p id="testas5" onclick="redirectToPage('TestasPenki', 60)">Testas <i class="fa fa-lock" ></i></p></a></li>
+                <li class="nav-link"><p id="switch" onclick="redirectToPage('apie_switch', 75)">Switch sakinys <i class="fa fa-lock"></i></p></li>
+                <li class="nav-link"><p id="testas6" onclick="redirectToPage('TestasSesi', 75)">Testas <i class="fa fa-lock" ></i></p></a></li>
+                <li class="nav-link"><p id="failai" onclick="redirectToPage('apie_failus', 90)">Darbas su failais <i class="fa fa-lock"></i></p></li>
+                <li class="nav-link"><p id="testas7" onclick="redirectToPage('TestasSeptyni' , 90)">Testas <i class="fa fa-lock" ></i></p></a></li>
+            </ul>
+        </nav>
+
+        <section id="mainSection">
+            <div class="mainSectionContainer">
+                <div class=chilDiv>
+                <div class="mainSectionHeader">
+                    <h3>Sveikas prisijungęs!</h3>
+                </div>
+                
+                <button class="button1" onclick="redirect()" id="continue">Tęsti mokymąsi</button>
+                <div class="progress">
+                    
+                <p class="progressTitle">Mano progresas</p>
+                <div class="w3-light-grey w3-small">
+                    <div class="w3-container w3-aqua" id="progressBar"><p class="precenteges" id="progressBarText"></p></div>
+                </div>
+                </div>
+                <div id="clock"></div>
+                <div class="data"><p><span id="datetime"></span></p></div>
+            </div> 
         </div>
-        <button class="button1">Testi mokymasi</button>
-        <div class="progress">
-        <p class="progressTitle">Mano progresas</p>
-        <div class="w3-light-grey w3-small">
-            <div class="w3-container w3-aqua" style="width:20%"><p class="precenteges">20%</p></div>
-          </div>
-        </div>
+        </section>
     </div>
-
-
-</section>
+</div>
 </body>
 
 <script>
-    function destroySession(){
-        
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = (dt.getFullYear()) +"-"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"-"+ (("0"+dt.getDate()).slice(-2));
+    function currentTime() {
+        var date = new Date(); 
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        var sec = date.getSeconds();
+        hour = updateTime(hour);
+        min = updateTime(min);
+        sec = updateTime(sec);
+        document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; 
+        var t = setTimeout(function(){ currentTime() }, 1000); 
+     }
+
+    function updateTime(k) {
+        if (k < 10) {
+        return "0" + k;
+        }
+        else {
+        return k;
+        }
     }
 
-    $('#profile').click(function(){
-        $.ajax({
-            type: "POST",
-            url: "profile.php",
-            data: {name: "John"},
-            success: function(data){
-                console.log(data)
-            }
-        });
-    });
-</script>
+        currentTime();
+    </script>
 </html>
 
 

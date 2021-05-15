@@ -16,13 +16,12 @@
     <section id="header">
         <ul id="navbar">
             <li><a href="http://localhost/webapp/" class="brk-btn">Atsijungti</a></li>
-            <li><a href="http://localhost/webapp/profile.html" class="brk-btn">Profilis</a></li>
-            <li><a href="#" class="brk-btn">Temos</a></li>
+            <li><a href="http://localhost/webapp/mainPage.html" class="brk-btn">Pagrindinis</a></li>
         </ul>
     </section>
     
     <div id="signUpForm" class="formClass">
-        <form action="" method="POST" id="signForm" class="signUp-content">
+        <form action="javascript:;" onsubmit="update()" method="POST" id="signForm" class="signUp-content">
             <div class="signUp-container">
                 <h1>Vartotojo Informacija</h1>
                 <hr>
@@ -35,14 +34,42 @@
                 <input type="text" id="school" placeholder="Mokykla" name="school" class="form_field" >
 
                 <input type="text" id="age" placeholder="Amžius" name="age" class="form_field"  required>
-
+                <p id="updateMessage"></p>
                 <div class="confirm-signUp">
                     <button type="submit" id="submit" class="brk-btn creata-account">Atnaujinti duomenis</button>
                 </div>
-
             </div>
         </form>
     </div> 
 
 </body>
+
+<script>
+    function update(){
+    var name = document.getElementById('name').value;
+    var surname = document.getElementById('surname').value;
+    var email = document.getElementById('email').value;
+    var school = document.getElementById('school').value;
+    var age = document.getElementById('age').value;
+    var message = document.getElementById('updateMessage');
+    $.ajax({
+        type: "POST",
+        url: "updateData.php",
+        data: {name : name,
+               surname: surname,
+                email : email,
+                school : school,
+                age : age},
+        success: function(data){
+            if(data == "updated"){
+                message.innerHTML = "Duomenys buvo sėkmingai atnaujanti";
+            }
+            else{
+                message.innerHTML = "Nepavyko atnaujinti duomenų";
+            }
+            message.style.display = "block";
+        }
+    });
+}
+</script>
 </html>

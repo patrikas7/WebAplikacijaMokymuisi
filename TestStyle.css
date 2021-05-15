@@ -1,0 +1,133 @@
+body{
+  background-color: #222;
+}
+#header{
+  width: 100%;
+  height: 11vh;
+  position: fixed;
+  margin-top: -10px;
+  z-index: 10;
+}
+
+#navbar{
+  margin-right: 20px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.headerLi a{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.brk-btn{
+  float: right;
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+}
+
+.brk-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover{
+  text-decoration: none;
+  color: aqua;
+}
+
+.brk-btn:hover::before{
+  right: 80%;
+}
+.brk-btn:hover::after{
+  left: 80%;
+}
+
+.question{
+  font-size: 30px;
+  margin-top: 30%;
+}
+.answers {
+  margin-top: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+button{
+  font-family: 'Work Sans', sans-serif;
+	font-size: 22px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-top: 450px;
+  background: none;
+  color: aqua;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: absolute;
+  margin-top: 200px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -10%);
+  font-size: 20px;
+  width: 600px;
+  height: 60%;
+  text-align: center;
+  color: aqua;
+  border: 0.1em solid aqua;
+}
+
+
+
+
+
+
